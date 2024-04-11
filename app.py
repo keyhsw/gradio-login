@@ -3,6 +3,9 @@ import random
 import time
 
 def authenticate(username, password):
+    USERNAME='admin'
+    PASSWORD=123
+    
     if username == USERNAME and password == PASSWORD:
         return True
         
