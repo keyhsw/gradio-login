@@ -1,14 +1,7 @@
 import gradio as gr
-
-def greet(name):
-    return "Hello " + name + "!"
-
-
+def reverse(text):
+    return text[::-1]
 with gr.Blocks() as demo:
-    name = gr.Textbox(label="Name")
-    output = gr.Textbox(label="Output Box")
-    greet_btn = gr.Button("Greet")
-    greet_btn.click(fn=greet, inputs=name, outputs=output, api_name="greet")
-
-if __name__ == "__main__":
-    demo.launch(auth=('admin','123456'))
+    button = gr.Button(value="Reverse")
+    button.click(reverse, gr.Textbox(), gr.Textbox())
+demo.launch(share=True, auth=("username", "password"))
